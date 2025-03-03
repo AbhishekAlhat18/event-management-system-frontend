@@ -1,0 +1,104 @@
+/* Dialog Container */
+.dialog-container {
+    padding: 20px;
+}
+
+/* Dialog Header */
+.dialog-header {
+    position: relative;
+    padding: 15px 20px 10px;
+    text-align: center;
+}
+
+/* Title - Centered */
+.dialog-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+}
+
+/* Close Icon - Positioned at the Top Right Corner */
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: red;
+}
+
+/* Email Message */
+.email-message {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.email-message p {
+    margin: 10px;
+}
+
+.email-display {
+    text-align: center; /* Center align the email */
+    font-weight: bold;
+}
+
+/* Input Fields */
+.code-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+
+.code-input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Error messages of Input fields*/
+.error {
+    color: red;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* Verify Button */
+.verify-btn {
+    margin-top: 15px;
+    background-color: #28a745; /* Green */
+    color: white !important;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.verify-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Resend Account Validation Code Link */
+.resend-account-validation-code {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+
+/* Fix Backdrop */
+.cdk-overlay-backdrop {
+    background: rgba(0, 0, 0, 0.5) !important;
+}

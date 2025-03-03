@@ -1,0 +1,29 @@
+.resend-dialog-container {
+    width: 350px;
+    padding: 30px;
+    text-align: center;
+    border-radius: 12px;
+  }
+  
+  .dialog-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .email-container {
+    margin-bottom: 30px;
+  }
+  
+  .email-text {
+    margin-bottom: 8px;
+  }
+  
+  .email-display {
+    font-weight: bold;
+  }
+  
+  .dialog-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
