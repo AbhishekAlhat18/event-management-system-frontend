@@ -1,11 +1,11 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import {UserRegistration} from './models/user-registration';
-import { UserRegistrationService } from './services/user-registration.service';
+import { UserRegistrationService } from '../app/services/authentication-services/user-registration.service';
 import { NgModel } from '@angular/forms';
 
 
 import { MatDialog } from '@angular/material/dialog';
-import { UserEmailVerificationComponent } from './components/user-email-verification/user-email-verification.component';
+import { UserEmailVerificationComponent } from '../app/components/authentication/user-email-verification/user-email-verification.component';
 
 @Component({
   selector: 'app-root',

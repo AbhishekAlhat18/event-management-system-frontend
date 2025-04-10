@@ -1,0 +1,50 @@
+<!-- organizer-onboarding.component.html -->
+<div class="onboarding-container">
+  <h1 class="page-title">Organizer Onboarding Process</h1>
+
+  <div class="tabs-container">
+    <div class="tab-buttons">
+      <button 
+        [class.active-tab]="activeTab === 'tasks'" 
+        (click)="setActiveTab('tasks')">
+        Organizer Application Status
+      </button>
+    
+    </div>
+
+    <!-- Tasks Tab -->
+    <div class="tab-content" *ngIf="activeTab === 'tasks'">
+      <table class="tasks-table">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let task of tasks">
+            <td>{{ task.name }}</td>
+            <td>
+              <span class="status-badge" [ngClass]="task.status">
+                {{ task.status }}
+              </span>
+            </td>
+            <td>
+              <button 
+                *ngIf="isActionButtonVisible(task.status)" 
+                class="action-button" 
+                (click)="handleAction(task)">
+                {{ getActionText(task.status) }}
+              </button>
+              <span *ngIf="!isActionButtonVisible(task.status)" class="no-action">
+                NO ACTION NEEDED
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+   
+</div>

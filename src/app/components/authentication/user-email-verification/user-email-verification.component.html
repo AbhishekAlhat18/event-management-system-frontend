@@ -1,0 +1,106 @@
+<!-- Dialog Container -->
+<div class="dialog-container">
+  <!-- Dialog Header -->
+  <div class="dialog-header">
+    <button mat-icon-button class="close-btn" (click)="dialogRef.close()">
+      <mat-icon>close</mat-icon>
+    </button>
+    <h2 class="dialog-title">Email Verification</h2>
+  </div>
+
+  <!-- Message Showing Email -->
+  <div class="email-message">
+    <p>
+       We’ve sent an email with code <strong>{{ data.email }}</strong
+      >Do not share this code with anyone. This code is valid for 15 minutes. If you need a new code,
+       click 'Resend'.
+    </p>
+  </div>
+
+  <div mat-dialog-content>
+    <form [formGroup]="validationForm">
+      <!-- Code Input Fields -->
+
+      <div class="code-inputs">
+        <input
+          formControlName="input1"
+          class="code-input"
+          maxlength="1"
+          (input)="moveToNext(input2, input1, $event)"
+          (keydown)="handleBackspace(input1, null, input2, $event)"
+          #input1
+        />
+
+        <input
+          formControlName="input2"
+          class="code-input"
+          maxlength="1"
+          (input)="moveToNext(input3, input2, $event)"
+          (keydown)="handleBackspace(input2, input1, input3, $event)"
+          #input2
+        />
+        <input
+          formControlName="input3"
+          class="code-input"
+          maxlength="1"
+          (input)="moveToNext(input4, input3, $event)"
+          (keydown)="handleBackspace(input3, input2, input4, $event)"
+          #input3
+        />
+        <input
+          formControlName="input4"
+          class="code-input"
+          maxlength="1"
+          (input)="moveToNext(input5, input4, $event)"
+          (keydown)="handleBackspace(input4, input3, input5, $event)"
+          #input4
+        />
+        <input
+          formControlName="input5"
+          class="code-input"
+          maxlength="1"
+          (input)="moveToNext(input6, input5, $event)"
+          (keydown)="handleBackspace(input5, input4, input6, $event)"
+          #input5
+        />
+        <input
+          formControlName="input6"
+          class="code-input"
+          maxlength="1"
+          (input)="moveToNext(null, input6, $event)"
+          (keydown)="handleBackspace(input6, input5, null, $event)"
+          #input6
+        />
+      </div>
+
+      
+  <!-- Error Message Below Inputs -->
+  <div class="error-message" *ngIf="errorMessage">
+    <p class="error-text">{{ errorMessage }}</p>
+  </div>
+
+      <!-- Verify Button -->
+      <button
+        mat-button
+        class="verify-btn"
+        (click)="verifyCode()"
+        [disabled]="validationForm.invalid"
+      >
+        Verify
+      </button>
+
+      <button mat-button class="close-button" (click)="dialogRef.close()">
+        Close
+      </button>
+    </form>
+
+    <div class="resend-account-validation-code">
+      <p>
+        Request a new code.
+        <button mat-button color="primary" (click)="resendCode()">
+          Resend
+        </button>
+      </p>
+    </div>
+  </div>
+</div>

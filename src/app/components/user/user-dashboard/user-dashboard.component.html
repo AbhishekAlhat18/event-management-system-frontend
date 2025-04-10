@@ -1,0 +1,67 @@
+<!-- dashboard.component.html -->
+<div class="dashboard-container">
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+      <div class="navbar-left">
+        <button class="menu-button" (click)="toggleMenu()">
+          <i class="material-icons">menu</i>
+        </button>
+        <span class="app-title">FindMyEvents</span>
+      </div>
+      <div class="navbar-right">
+        <span class="username" *ngIf="username">Welcome, {{username}}</span>
+        <button class="profile-button">
+          <i class="material-icons">account_circle</i>
+        </button>
+      </div>
+    </nav>
+  
+    <!-- Sidebar Menu -->
+    <div class="sidebar" [class.open]="isMenuOpen">
+      <div class="sidebar-header">
+        <h3>Menu</h3>
+        <button class="close-menu" (click)="toggleMenu()">
+          <i class="material-icons">close</i>
+        </button>
+      </div>
+      <ul class="menu-items">
+        <li *ngFor="let item of menuItems" [routerLink]="item.route">
+          <i class="material-icons">{{item.icon}}</i>
+          <span>{{item.label}}</span>
+        </li>
+      </ul>
+    </div>
+  
+    <!-- Main Content -->
+    <div class="main-content" [class.shifted]="isMenuOpen">
+      <div class="content-header">
+        <h1>Upcoming Events</h1>
+        <p>Discover and book amazing events</p>
+      </div>
+  
+      <!-- Events Grid -->
+      <div class="events-grid">
+        <div class="event-card" *ngFor="let event of events">
+          <div class="event-image" [style.background-image]="'url(' + event.image + ')'"></div>
+          <div class="event-details">
+            <h2>{{event.name}}</h2>
+            <div class="event-meta">
+              <span class="location">
+                <i class="material-icons">location_on</i>{{event.location}}
+              </span>
+              <span class="date">
+                <i class="material-icons">event</i>{{event.date}}
+              </span>
+            </div>
+            <div class="event-footer">
+              <span class="price">${{event.price}}</span>
+              <button class="book-button" (click)="bookEvent(event.id)">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Overlay for when sidebar is open on mobile -->
+    <div class="overlay" *ngIf="isMenuOpen" (click)="toggleMenu()"></div>
+  </div>

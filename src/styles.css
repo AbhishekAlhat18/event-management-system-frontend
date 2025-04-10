@@ -1,16 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
+/* .custom-toast {
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+} */
 
-.mat-dialog-container {
+/* .mat-dialog-container {
     background: white;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Optional: Dim the background when the popup is open */
-  .cdk-overlay-backdrop {
-    background: rgba(0, 0, 0, 0.5) !important;
-  }
+  } */
+
+/* Optional: Dim the background when the popup is open */
+/* .cdk-overlay-backdrop {
+  background: rgba(0, 0, 0, 0.5) !important;
+} */
+
+ .snackbar-success {
+  --mdc-snackbar-container-color:  white;
+  background:  white;;
+  color: white; 
+} 
+.snackbar-success button {
+  color: white !important;
+  border: none;
+} 
+
+/*
+.red-snackbar {
+    --mdc-snackbar-container-color: #F44336;
+    background: #F44336 !important;
+    color: white;
+}
+.red-snackbar button {
+    background-color: #F44336 !important;
+    color: white !important;
+    border: none;
+} */
+
+/* .snackbar-error {
+  --mdc-snackbar-container-color: #f44336;
+  background: #f44336;
+  color: white;
+}
+
+.snackbar-error button {
+  color: white !important;
+  border: none;
+} */

@@ -1,0 +1,86 @@
+<div class="login-page">
+  <div class="login-container">
+    <h2>Login</h2>
+
+       <!-- Error message display -->
+       <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="form-container">
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          class="form-control"
+          placeholder="Enter Email"
+        />
+        <div
+          *ngIf="
+            loginForm.get('email')?.touched && loginForm.get('email')?.invalid
+          "
+          class="error"
+        >
+          <small *ngIf="loginForm.get('email')?.errors?.['required']"
+            >Email is required.</small
+          >
+          <small *ngIf="loginForm.get('email')?.errors?.['pattern']"
+            >Enter a valid email.</small
+          >
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="password-container">
+          <input
+            id="password"
+            [type]="hidePassword ? 'password' : 'text'"
+            formControlName="password"
+            class="form-control"
+            placeholder="Enter Password"
+          />
+          <span class="eye-icon" (click)="togglePasswordVisibility()">
+            <i class="material-icons">
+              {{ hidePassword ? "visibility_off" : "visibility" }}
+            </i>
+          </span>
+        </div>
+        <div
+          *ngIf="
+            loginForm.get('password')?.touched &&
+            loginForm.get('password')?.invalid
+          "
+          class="error"
+        >
+          <small *ngIf="loginForm.get('password')?.errors?.['required']"
+            >Password is required.</small
+          >
+        </div>
+      </div>
+
+      <!-- Remember Me -->
+      <div class="form-group remember-me">
+        <input type="checkbox" formControlName="rememberMe" id="rememberMe" />
+        <label for="rememberMe">Remember Me</label>
+      </div>
+
+      <!-- Login Button -->
+      <button type="submit" [disabled]="loginForm.invalid" class="submit-btn">
+        Login
+      </button>
+
+      <!-- Forgot Password & Register -->
+      <div class="login-links">
+        <a routerLink="/forgot-password">Forgot Password?</a>
+        <p>
+          Don't have an account? <a routerLink="/user-registration">Sign Up</a>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>

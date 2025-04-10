@@ -1,0 +1,278 @@
+/* dashboard.component.css */
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+:host {
+  display: block;
+  height: 100%;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* Navbar Styling */
+.username {
+    margin-right: 12px;
+    font-size: 14px;
+    color: #fff;
+  }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #121212;
+  color: white;
+  padding: 0 16px;
+  height: 64px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.navbar-left, .navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.menu-button, .profile-button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.menu-button:hover, .profile-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.app-title {
+  margin-left: 16px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 280px;
+  height: 100%;
+  background-color: white;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease;
+  z-index: 100;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: #f5f5f5;
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.close-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.close-menu:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.menu-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-items li {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.menu-items li:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.menu-items li i {
+  margin-right: 16px;
+  color: #555;
+}
+
+.menu-items li span {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 24px;
+  background-color: #f9f9f9;
+  overflow-y: auto;
+  transition: margin-left 0.3s ease;
+}
+
+.content-header {
+  margin-bottom: 24px;
+}
+
+.content-header h1 {
+  margin: 0 0 8px 0;
+  font-size: 28px;
+  font-weight: 500;
+  color: #333;
+}
+
+.content-header p {
+  margin: 0;
+  color: #666;
+  font-size: 16px;
+}
+
+/* Events Grid */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.event-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.event-image {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+}
+
+.event-details {
+  padding: 16px;
+}
+
+.event-details h2 {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+}
+
+.event-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.event-meta span {
+  display: flex;
+  align-items: center;
+  color: #666;
+  font-size: 14px;
+}
+
+.event-meta span i {
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.event-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+}
+
+.book-button {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.book-button:hover {
+  background-color: #1565c0;
+}
+
+/* Overlay for mobile when sidebar is open */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .main-content {
+    padding: 16px;
+  }
+}
+
+/* When sidebar is open, shift the content on larger screens */
+@media (min-width: 1024px) {
+  .main-content.shifted {
+    margin-left: 280px;
+  }
+}

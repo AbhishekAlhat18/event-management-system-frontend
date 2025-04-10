@@ -1,0 +1,18 @@
+
+
+<!-- Account Not Activated Dialog Container -->
+<div class="resend-dialog-container">
+    <!-- Header -->
+    <h2 class="dialog-title">Account Not Activated</h2>
+  
+    <!-- Email Display -->
+    <div class="text-container">
+      <p class="text">Your account hasn't been activated yet. To activate your account, please verify your email address. Click on <strong>Proceed</strong> below to proceed with account activation.</p>     
+    </div>
+  
+    <!-- Buttons -->
+    <div class="dialog-actions">
+      <button mat-raised-button color="primary" (click)="onVerifyEmailClick()">Proceed</button>
+      <button mat-button (click)="dialogRef.close()">Cancel</button>
+    </div>
+  </div>

@@ -1,0 +1,163 @@
+/* Dialog Container */
+.dialog-container {
+  padding: 20px;
+}
+
+/* Dialog Header */
+.dialog-header {
+  position: relative;
+  padding: 15px 20px 10px;
+  text-align: center;
+}
+
+/* Title - Centered */
+.dialog-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+
+/* Close Icon - Positioned at the Top Right Corner */
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: grey;
+}
+
+/* Email Message */
+.email-message {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.email-message p {
+  margin: 10px;
+}
+
+/* Input Fields */
+.code-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.code-input {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Error messages of Input fields*/
+.error-message {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.error-text {
+  color: #d32f2f;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* Verify Button */
+.verify-btn {
+  margin-top: 15px;
+  background-color: #2563EB; /* Green */
+  color: white !important;
+  border: 1px solid #E2E8F0; /* Subtle border */
+  width: 100%;
+  padding: 10px 0; /* Better vertical spacing */
+  font-weight: 500; /* Slightly bolder text */
+  border: none; /* Remove default border */
+  cursor: pointer; /* Hand cursor on hover */
+  transition: all 0.2s ease; /* Smooth hover effect */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+.verify-btn:hover {
+  background-color: #2563EB; /* Slightly darker */ /* Slightly darker on hover */
+  transform: translateY(-1px); /* Slight lift effect */
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15); /* Enhanced shadow on hover */
+}
+
+.cverify-btn:active {
+  transform: translateY(0); /* Push down effect when clicked */
+}
+
+.close-button {
+  margin-top: 15px;
+  background-color: #F1F5F9; /* Light gray */
+  color:#d32f2f!important; /*   #E53E3E */  
+  border: 1px solid #E2E8F0; /* Subtle border */
+  width: 100%;
+  padding: 10px 0; /* Better vertical spacing */
+  font-weight: 500; /* Slightly bolder text */
+  border: none; /* Remove default border */
+  cursor: pointer; /* Hand cursor on hover */
+  transition: all 0.2s ease; /* Smooth hover effect */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+.close-button:hover {
+  background-color: #E2E8F0; /* Slightly darker */ /* Slightly darker on hover */
+  transform: translateY(-1px); /* Slight lift effect */
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15); /* Enhanced shadow on hover */
+}
+
+.close-button:active {
+  transform: translateY(0); /* Push down effect when clicked */
+}
+
+.verify-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Resend Account Validation Code Link */
+.resend-account-validation-code {
+  text-align: center;
+  margin-top: 10px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Snakbar */
+
+/* .snackbar-success {
+    background-color: #4CAF50; 
+    color: #fff; 
+    font-weight: bold;
+  } */
+
+.snackbar-error {
+  --mdc-snackbar-container-color: #f44336;
+  background: #f44336 !important;
+  color: white;
+}
+
+.snackbar-error button {
+  background-color: #f44336 !important;
+  color: white !important;
+  border: none;
+}
+  
+
+/* Fix Backdrop */
+.cdk-overlay-backdrop {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
